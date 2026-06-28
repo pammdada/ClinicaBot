@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/chatbot")
-@CrossOrigin(origins = "http://localhost:8080", allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:8080", "https://clinicabot-production.up.railway.app"}, allowCredentials = "true")
 public class ChatbotController {
     private final ChatbotService chatbotService;
 

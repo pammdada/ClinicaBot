@@ -18,7 +18,26 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/").permitAll()
+                        .requestMatchers(
+                                "/",
+                                "/html/**",
+                                "/css/**",
+                                "/js/**",
+                                "/img/**",
+                                "/api/especialidades/**",
+                                "/api/medicos/**",
+                                "/api/horarios/**",
+                                "/api/citas/**",
+                                "/api/usuarios/**",
+                                "/api/chatbot/**",
+                                "/api/chatbot/iniciar",
+                                "/api/chatbot/chat",
+                                "/api/prueba/**",
+                                "/api/prueba/chat",
+                                "/api/prueba/chat1",
+                                ("/api/agente/**")
+
+                        ).permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form.disable())
@@ -42,7 +61,7 @@ public class SecurityConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("*")
+                        .allowedOrigins("http://localhost:8080", "https://clinicabot-production.up.railway.app")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);

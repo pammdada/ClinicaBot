@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/citas")
-@CrossOrigin(origins = "http://localhost:8080", allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:8080", "https://clinicabot-production.up.railway.app"}, allowCredentials = "true")
 public class CitaController {
 
     @Autowired

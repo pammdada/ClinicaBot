@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/horarios")
-@CrossOrigin(origins = "http://localhost:8080", allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:8080", "https://clinicabot-production.up.railway.app"}, allowCredentials = "true")
 public class HorarioController {
     @Autowired
     private HorarioService horarioService;
