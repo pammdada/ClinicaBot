@@ -1,31 +1,20 @@
 # Gestor de Citas
 
-Sistema de gestión de citas médicas con Spring Boot.
+Sistema web para la gestión de citas médicas de la **Clínica San Martín**.
 
-## Configuración
+## Descripción
 
-Antes de ejecutar la aplicación, configura las siguientes variables de entorno:
+Permite a los pacientes:
+- Registrarse e iniciar sesión
+- Buscar especialidades y médicos
+- Agendar, modificar y cancelar citas médicas
+- Consultar su historial de citas
+- Usar un asistente virtual con inteligencia artificial para reservar citas
 
-| Variable | Descripción | Valor por defecto |
-|---|---|---|
-| `MYSQL_URL` | URL de conexión a MySQL | `jdbc:mysql://localhost:3306/clinica?allowPublicKeyRetrieval=true&useSSL=false` |
-| `MYSQL_USERNAME` | Usuario de MySQL | `root` |
-| `MYSQL_PASSWORD` | Contraseña de MySQL | `admin` |
-| `GROQ_API_KEY` | API Key de Groq para el chatbot | *(obligatorio)* |
+## Tecnologías
 
-### Ejemplo con archivo `.env`
-
-Crea un archivo `.env` en la raíz del proyecto:
-
-```env
-MYSQL_URL=jdbc:mysql://localhost:3306/clinica?allowPublicKeyRetrieval=true&useSSL=false
-MYSQL_USERNAME=root
-MYSQL_PASSWORD=admin
-GROQ_API_KEY=tu_api_key_aqui
-```
-
-## Ejecución
-
-```bash
-./mvnw spring-boot:run
-```
+- **Backend:** Java 21 + Spring Boot 3.5.6 + Spring Security + JPA/Hibernate
+- **Base de datos:** MySQL
+- **Frontend:** HTML, CSS, Bootstrap 5, JavaScript vanilla
+- **IA:** Groq API (Llama) para el chatbot
+- **Despliegue:** Railway
