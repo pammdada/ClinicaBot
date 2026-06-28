@@ -21,7 +21,7 @@ server:
 
 groq:
   api:
-    key: ${GROQ_API_KEY:}
+    key: ${GROQ_API_KEY}
     url: https://api.groq.com/openai/v1/chat/completions
 
 logging:
