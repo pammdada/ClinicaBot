@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function cargarPerfilUsuario() {
     try {
-        const res = await fetch("http://localhost:8085/api/usuarios/perfil", {
+        const res = await fetch(`${API_BASE_URL}/api/usuarios/perfil`, {
             credentials: "include"
         });
 
@@ -73,7 +73,7 @@ function inicializarSelects() {
     const selectHora = document.getElementById('hora');
 
     // A. Cargar Especialidades
-    fetch('http://localhost:8085/api/especialidades')
+    fetch(`${API_BASE_URL}/api/especialidades`)
         .then(res => res.json())
         .then(data => {
             selectEspecialidad.innerHTML = '<option selected disabled value="">Seleccione una especialidad</option>';
@@ -97,7 +97,7 @@ function inicializarSelects() {
 
         if(!idEspecialidad) return;
 
-        fetch(`http://localhost:8085/api/medicos/especialidad/${idEspecialidad}`)
+        fetch(`${API_BASE_URL}/api/medicos/especialidad/${idEspecialidad}`)
             .then(res => res.json())
             .then(data => {
                 data.forEach(med => {
@@ -118,7 +118,7 @@ function inicializarSelects() {
 
         if(!idMedico) return;
 
-        fetch(`http://localhost:8085/api/horarios/medico/${idMedico}`)
+        fetch(`${API_BASE_URL}/api/horarios/medico/${idMedico}`)
             .then(res => res.json())
             .then(data => {
                 if (!data || data.length === 0) return;
@@ -205,7 +205,7 @@ async function enviarReservaBackend() {
 
         // Buscar horario
         const horarioRes = await fetch(
-            `http://localhost:8085/api/horarios/buscar?medicoId=${medicoId}&fecha=${fecha}&hora=${hora}`,
+            `${API_BASE_URL}/api/horarios/buscar?medicoId=${medicoId}&fecha=${fecha}&hora=${hora}`,
             { credentials: "include" }
         );
 
@@ -213,7 +213,7 @@ async function enviarReservaBackend() {
         const horario = await horarioRes.json();
 
         // Registrar
-        const citaRes = await fetch("http://localhost:8085/api/citas", {
+        const citaRes = await fetch(`${API_BASE_URL}/api/citas`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",

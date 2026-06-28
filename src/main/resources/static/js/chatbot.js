@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     saveAndShowMessage("user", msg);
     chatInput.value = "";
 
-    fetch("http://localhost:8085/api/chatbot/chat", {
+    fetch(`${API_BASE_URL}/api/chatbot/chat`, {
        method: "POST",
        headers: { "Content-Type": "application/json" },
        body: JSON.stringify({ message: msg, history: conversationHistory })

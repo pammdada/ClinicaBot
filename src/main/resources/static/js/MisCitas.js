@@ -15,7 +15,7 @@ async function cargarCitas() {
     if (!usuario) return;
 
     try {
-        const response = await fetch(`http://localhost:8085/api/citas/usuario/${usuario.idUsuario}`);
+        const response = await fetch(`${API_BASE_URL}/api/citas/usuario/${usuario.idUsuario}`);
         if (!response.ok) {
             console.error("Error al obtener citas:", response.status);
             return;
@@ -85,7 +85,7 @@ async function cancelarCita(idCita) {
     if (!confirm("¿Estás seguro de cancelar esta cita?")) return;
 
     try {
-        const res = await fetch(`http://localhost:8085/api/citas/${idCita}`, {
+        const res = await fetch(`${API_BASE_URL}/api/citas/${idCita}`, {
             method: "DELETE"
         });
 
@@ -130,7 +130,7 @@ async function cargarDatosParaEditar(cita) {
     const selectHora = document.getElementById('editHora');
 
 
-    const especialidadesRes = await fetch("http://localhost:8085/api/especialidades");
+    const especialidadesRes = await fetch(`${API_BASE_URL}/api/especialidades`);
     const especialidades = await especialidadesRes.json();
 
     selectEspecialidad.innerHTML = '<option disabled>Seleccione</option>';
@@ -150,7 +150,7 @@ async function cargarDatosParaEditar(cita) {
 
         if (!idEspecialidad) return;
 
-        const medicosRes = await fetch(`http://localhost:8085/api/medicos/especialidad/${idEspecialidad}`);
+        const medicosRes = await fetch(`${API_BASE_URL}/api/medicos/especialidad/${idEspecialidad}`);
         const medicos = await medicosRes.json();
 
         medicos.forEach(med => {
@@ -172,7 +172,7 @@ async function cargarDatosParaEditar(cita) {
 
         if (!idMedico) return;
 
-        const horariosRes = await fetch(`http://localhost:8085/api/horarios/medico/${idMedico}`);
+        const horariosRes = await fetch(`${API_BASE_URL}/api/horarios/medico/${idMedico}`);
         const horarios = await horariosRes.json();
 
         const disponibles = horarios.filter(h => h.disponible === true || (horarioSeleccionado && h.idHorario === horarioSeleccionado.idHorario));
@@ -241,14 +241,14 @@ document.getElementById("formEditarCita").addEventListener("submit", async (e) =
     try {
         // 1️⃣ Obtener el horario correspondiente al médico, fecha y hora
         const horarioRes = await fetch(
-            `http://localhost:8085/api/horarios/buscar?medicoId=${medicoId}&fecha=${fecha}&hora=${hora}`
+            `${API_BASE_URL}/api/horarios/buscar?medicoId=${medicoId}&fecha=${fecha}&hora=${hora}`
         );
         if (!horarioRes.ok) throw new Error("No se encontró el horario seleccionado.");
         const horario = await horarioRes.json();
 
         // 2️⃣ Enviar cambios al backend
 
-        const res = await fetch(`http://localhost:8085/api/citas/${cita.idCita}`, {
+        const res = await fetch(`${API_BASE_URL}/api/citas/${cita.idCita}`, {
             method: "PUT", // o PATCH según tu API
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

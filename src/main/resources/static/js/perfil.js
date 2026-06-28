@@ -33,7 +33,7 @@ document.getElementById("formPerfil").addEventListener("submit", async (e) => {
     }
 
     try {
-        const res = await fetch(`http://localhost:8085/api/usuarios/${usuario.idUsuario}`, {
+        const res = await fetch(`${API_BASE_URL}/api/usuarios/${usuario.idUsuario}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ telefono, email }),
