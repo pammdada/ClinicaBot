@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: ${MYSQL_URL:jdbc:mysql://localhost:3306/clinica?allowPublicKeyRetrieval=true&useSSL=false}
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:admin}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  mvc:
+    async:
+      request-timeout: 60000
+
+server:
+  tomcat:
+    connection-timeout: 60000
+  port: 8085
+
+groq:
+  api:
+    key: ${GROQ_API_KEY:}
+    url: https://api.groq.com/openai/v1/chat/completions
+
+logging:
+  level:
+    com.clinica.gestor_citas.service.GroqChatService: DEBUG
+    org.springframework.web.client: DEBUG

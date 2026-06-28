@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clínica San Martín | Ica</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/inicio.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="../img/logo-clinica.png" alt="Logo Clínica San Martín" width="40" height="40" class="me-2">
+      <span>Clínica San Martín</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#especialidades">Especialidades</a></li>
+        <li class="nav-item"><a class="nav-link" href="#medicos">Médicos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+
+
+        <!-- ESTE ES EL CORRECTO -->
+        <li class="nav-item">
+          <a href="MisCitas.html" id="menuVerCitas" class="nav-link" style="display:none;">Ver mis citas</a>
+        </li>
+      </ul>
+
+      <a id="btnLogin" href="login.html" class="btn btn-purple ms-lg-3">Iniciar sesión</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="home" class="pt-5 mt-5">
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <span class="badge rounded-pill bg-light text-purple mb-3">✨ Atención Médica de Calidad</span>
+        <h1 class="fw-bold text-purple">Tu Salud es Nuestra Prioridad</h1>
+        <p class="lead text-muted">
+          En Clínica San Martín ofrecemos atención médica integral con los mejores especialistas de Ica.
+        </p>
+        <a href="cita.html" class="btn btn-purple me-2">Reservar Cita Ahora</a>
+        <a href="#especialidades" class="btn btn-outline-purple">Conocer Especialidades</a>
+        <hr class="my-4">
+        <div class="d-flex gap-4">
+          <div><i class="bi bi-telephone-fill text-purple"></i> <span>+51 056 234 567</span></div>
+          <div><i class="bi bi-geo-alt-fill text-purple"></i> <span>Av San Martín 598, Ica</span></div>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="../img/atencion-medica.jpg" alt="Atención Médica" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+  <div class="bg-purple text-white py-4">
+    <div class="container text-center d-flex justify-content-around flex-wrap">
+      <div><h4>15+</h4><p>Años de Experiencia</p></div>
+      <div><h4>50+</h4><p>Médicos Especialistas</p></div>
+      <div><h4>20K+</h4><p>Pacientes Atendidos</p></div>
+      <div><h4>98%</h4><p>Satisfacción</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== NOSOTROS ===== -->
+<section id="nosotros" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-purple">Sobre Nosotros</h2>
+      <p class="text-muted">Somos una clínica líder en Ica comprometida con tu bienestar.</p>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4">
+        <img src="../img/nosotros.jpg" alt="Nosotros" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6">
+        <h4>Comprometidos con tu Salud desde 2010</h4>
+        <p class="text-muted">
+          En Clínica San Martín, combinamos la experiencia de nuestros profesionales con instalaciones modernas.
+        </p>
+        <div class="bg-purple text-white p-3 rounded my-3">
+          <h5>Nuestra Misión</h5>
+          <p>Brindar atención médica de excelencia con calidez humana.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ESPECIALIDADES ===== -->
+<section id="especialidades" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-purple">Nuestras Especialidades</h2>
+      <p class="text-muted">Equipo altamente calificado en todas las áreas médicas.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-3"><div class="card p-3 text-center"><h6 class="text-purple">Medicina General</h6></div></div>
+      <div class="col-md-3"><div class="card p-3 text-center"><h6 class="text-purple">Cardiología</h6></div></div>
+      <div class="col-md-3"><div class="card p-3 text-center"><h6 class="text-purple">Pediatría</h6></div></div>
+      <div class="col-md-3"><div class="card p-3 text-center"><h6 class="text-purple">Ginecología</h6></div></div>
+      <div class="col-md-3"><div class="card p-3 text-center"><h6 class="text-purple">Dermatología</h6></div></div>
+      <div class="col-md-3"><div class="card p-3 text-center"><h6 class="text-purple">Traumatología</h6></div></div>
+      <div class="col-md-3"><div class="card p-3 text-center"><h6 class="text-purple">Neurología</h6></div></div>
+      <div class="col-md-3"><div class="card p-3 text-center"><h6 class="text-purple">Oftalmología</h6></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MÉDICOS ===== -->
+<section id="medicos" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-purple">Nuestros Médicos</h2>
+      <p class="text-muted">Especialistas con experiencia y vocación de servicio.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-3 text-center">
+        <img src="../img/medico-hombre1.jpg" class="rounded-circle mb-3" width="150">
+        <h6 class="fw-bold">Dr. Juan Pérez</h6>
+        <p class="text-muted">Cardiólogo</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="../img/medico-hombre2.jpg" class="rounded-circle mb-3" width="150">
+        <h6 class="fw-bold">Dra. María López</h6>
+        <p class="text-muted">Pediatra</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="../img/medico-hombre3.jpg" class="rounded-circle mb-3" width="150">
+        <h6 class="fw-bold">Dr. Luis Ramos</h6>
+        <p class="text-muted">Neurólogo</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="../img/medico-mujer1.jpg" class="rounded-circle mb-3" width="150">
+        <h6 class="fw-bold">Dra. Ana Torres</h6>
+        <p class="text-muted">Ginecóloga</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIOS ===== -->
+<section id="testimonios" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-purple">Testimonios</h2>
+      <p class="text-muted">Lo que dicen nuestros pacientes.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+          <p>"Excelente atención, médicos muy profesionales."</p>
+          <h6 class="fw-bold">- Carla M.</h6>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+          <p>"Instalaciones modernas y trato humano."</p>
+          <h6 class="fw-bold">- José R.</h6>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+          <p>"Me atendieron rápido y con mucha calidez."</p>
+          <h6 class="fw-bold">- Diana P.</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===== CONTACTO ===== -->
+<section id="contacto" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-purple">Contacto</h2>
+      <p class="text-muted">Escríbenos y te responderemos lo antes posible.</p>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Nombre">
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Correo">
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" rows="4" placeholder="Mensaje"></textarea>
+          </div>
+          <button type="submit" class="btn btn-purple">Enviar Mensaje</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <h5 class="fw-bold">Ubicación</h5>
+        <p><i class="bi bi-geo-alt-fill text-purple"></i> Av San Martín 598, Ica</p>
+        <p><i class="bi bi-telephone-fill text-purple"></i> +51 056 234 567</p>
+        <iframe src="https://maps.google.com/maps?q=Ica%20Peru&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="250" style="border:0;" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-purple text-white py-4">
+  <div class="container text-center">
+    <p class="mb-1">© 2025 Clínica San Martín - Todos los Derechos Reservados</p>
+    <div>
+      <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="text-white"><i class="bi bi-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Botón flotante -->
+<button id="chatbotBtn"
+        class="btn btn-purple rounded-circle shadow-lg"
+        style="position:fixed; bottom:20px; right:20px; width:60px; height:60px; z-index:1000; font-size:24px;">💬
+</button>
+
+<!-- Modal del chatbot -->
+<div id="chatbotModal">
+    <!-- Encabezado -->
+    <div class="d-flex justify-content-between align-items-center bg-purple text-white p-3 rounded-top">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-robot me-2 fs-5"></i>
+            <h6 class="mb-0 fw-bold">Asistente Virtual</h6>
+        </div>
+        <div>
+            <!-- Reiniciar Conversación -->
+            <button id="resetChat" class="btn btn-sm text-white me-2" title="Reiniciar conversación">
+                <i class="bi bi-trash3-fill"></i>
+            </button>
+            <!-- Botón Cerrar -->
+            <button id="closeChatbot" class="btn btn-sm text-white fs-5 p-0" title="Cerrar">&times;</button>
+        </div>
+    </div>
+    <div id="chatContent" class="p-3"></div>
+    <div class="p-2 border-top bg-light rounded-bottom">
+        <div class="input-group">
+            <input id="chatInput" type="text" class="form-control border-0 shadow-none" placeholder="Escribe tus síntomas..." autocomplete="off">
+            <button id="sendMsg" class="btn btn-purple"><i class="bi bi-send-fill"></i></button>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/chatbot.js"></script>
+<script src="/js/inicio.js"></script>
+
+</body>
+</html>
+
+
+

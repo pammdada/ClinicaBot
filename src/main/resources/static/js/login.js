@@ -1,0 +1,44 @@
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const identificador = document.getElementById("identificador").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    let nombre = null;
+    let dni = null;
+
+    // Si son solo números = es DNI
+    if (/^\d+$/.test(identificador)) {
+        dni = identificador;
+    } else {
+        nombre = identificador;
+    }
+
+    try {
+        const response = await fetch("http://localhost:8085/api/usuarios/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ nombre, dni, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.usuario) {
+
+
+            localStorage.setItem("usuario", JSON.stringify(data.usuario));
+
+            alert(`✅ Bienvenido, ${data.usuario.nombre}!`);
+
+            // Redirigir al inicio
+            window.location.href = "inicio.html";
+
+        } else {
+            alert("❌ Credenciales incorrectas. Intenta nuevamente.");
+        }
+
+    } catch (error) {
+        console.error("Error al conectar con el servidor:", error);
+        alert("⚠️ No se pudo conectar con el servidor.");
+    }
+});
